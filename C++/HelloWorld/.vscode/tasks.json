@@ -1,0 +1,27 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "printmessage",
+      "type": "shell",
+      "command": "g++",
+      "args": ["-g", "PrintMessage.cpp"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "printtypes",
+      "type": "shell",
+      "command": "g++",
+      "args": ["-g", "PrintTypes.cpp"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
