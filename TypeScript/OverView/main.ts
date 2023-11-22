@@ -1,6 +1,6 @@
 // adding export makes it a module and prevent main.ts from creating exception
 // file should be module not a script with global scope
-export {};
+export { };
 let message = "Welcome back";
 console.log(message);
 
