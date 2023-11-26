@@ -1,4 +1,4 @@
-// // Basic array
+// ------------------------------------ Basic array --------------------------------------------
 // const superHeros: string[] = []
 // // const heroPower: number[] = []
 // const heroPower: Array<number> = []
@@ -39,19 +39,19 @@
 // seaCreatures.push("lobster");
 // console.log(seaCreatures);
 
-// // -----------unShift()--------------
+// -----------unShift()--------------
 // // append dragonfish to the beginning of the seaCreatures array
 // seaCreatures.unshift("dragonfish");
 // console.log(seaCreatures);
 
-// //------------------ pop()------------
+//------------------ pop()------------
 // remove the last item
 // seaCreatures.pop();
 
-// // shift remove the first item
+// ------------------------ shift remove the first item ------------------
 // seaCreatures.shift();
 
-// // --------------------------loop through array----------------------------
+// --------------------------loop through array----------------------------
 // // create an array of aquatic mammals
 // let mammals = ["dolphin", "whale", "manatee"];
 
@@ -81,7 +81,7 @@
 // fish.splice(1, 2, "manta ray"); // at index 1 remove 2 and add the new name
 // console.log(fish);
 
-// // -------------------------slice()---------------------------
+// -------------------------slice()---------------------------
 // //The slice() method copies a portion of an array to a new array.
 // let fish = ["piranha", "barracuda", "koi", "eel"];
 // let newArray = fish.slice(0, 3); // it means from index 0 to index 2 not included 3
@@ -91,13 +91,13 @@
 // let fishWithShortNames = fish.slice(2, 4);
 // console.log(fishWithShortNames);//[ 'koi', 'eel' ]
 
-// // -----------------------------------------Reverse--------------
+// -----------------------------------------Reverse--------------
 // let fish = ["piranha", "barracuda", "koi", "eel"];
 // // reverse the fish array
 // fish.reverse();
 // console.log(fish);
 
-// // --------------fill()-------------------------
+// --------------fill()-------------------------
 // // the fill() method replaces all the elements in an array with a static value.
 // let fish = ["piranha", "barracuda", "koi", "eel"];
 // // replace all values in the array with "shark"
@@ -106,7 +106,7 @@
 // fish.fill("shark", 1) // > [ 'piranha', 'shark', 'shark', 'shark' ]
 // fish.fill("shark", 1, 3); // > [ 'piranha', 'shark', 'shark', 'eel' ] (1 start, 3 end)
 
-// // ---------------------------sort()-----------------
+// ---------------------------sort()-----------------
 // // the sort() method sorts the elements in an array based on the first character in the element
 // let fish = ["piranha", "barracuda", "koi", "eel"];
 // // sort items in array
@@ -124,7 +124,7 @@
 // }
 // numbers.sort(sortNumerically);
 
-// // ------------------------concat()----------------------
+// ------------------------concat()----------------------
 // // the concat() method merges two or more arrays together to form a new array.
 // // create arrays of monovalves and bivalves
 // let monovalves = ["abalone", "conch"];
@@ -133,7 +133,7 @@
 // let shellfish = monovalves.concat(bivalves);
 // console.log(shellfish);
 
-// // ------------------------------join()-----------------------
+// ------------------------------join()-----------------------
 // // the join() method converts all the elements of an array into a new string.
 // let fish = ["piranha", "barracuda", "koi", "eel"];
 // let fishString = fish.join();
@@ -142,7 +142,7 @@
 // let fishString2 = fish.join(", ");
 // console.log(fishString2); //'piranha, barracuda, koi, eel'
 
-// // ----------------------indexOf()-------------------------------
+// ----------------------indexOf()-------------------------------
 // // the indexOf() method returns the index number of the first instance of an element.
 // let fish = ["piranha", "barracuda", "koi", "barracuda"];
 // // find the first instance of an element
@@ -150,13 +150,13 @@
 
 // fish.indexOf("shark"); // -1
 
-// // ---------------------------lastIndexOf()-----------------------
+// ---------------------------lastIndexOf()-----------------------
 // // the lastIndexOf() method returns the index number of the last instance of an element
 // let fish = ["piranha", "barracuda", "koi", "barracuda"];
 // // find the last instance of an element
 // fish.lastIndexOf("barracuda"); // 3
 
-// // ---------------------- Arrow function---------------------------
+// ---------------------- Arrow function---------------------------
 // var example = function() {
 //   // code to execute
 // };
@@ -176,7 +176,7 @@
 //   return x + y;
 // }
 
-// // -----------------foreach()----------------------------------
+// -----------------foreach()----------------------------------
 // let fish = ["piranha", "barracuda", "cod", "eel"];
 // // print out each item in the array
 // fish.forEach(individualFish => {
@@ -188,7 +188,7 @@
 //   console.log(fish[i]);
 // }
 
-// // ---------------------map()-----------------------------
+// ---------------------map()-----------------------------
 // // the map() method creates a new array with the results of a function call on each element in the array.
 // let fish = ["piranha", "barracuda", "cod", "eel"];
 
@@ -197,7 +197,7 @@
 //   console.log(individualFish);
 // });
 
-// // --------------------------filter()-----------------------
+// --------------------------filter()-----------------------
 // // the filter() method creates a new array with the elements that pass the result of a given test
 // let seaCreatures = ["shark", "whale", "squid", "starfish", "narwhal"];
 
@@ -207,7 +207,7 @@
 // });
 // console.log(filteredList);
 
-// // -----------------------reduce()--------------------
+// -----------------------reduce()--------------------
 // // the reduce() method will reduce an array to a single value.
 // let numbers = [42, 23, 16, 15, 4, 8];
 
@@ -217,7 +217,7 @@
 // });
 // console.log(sum);
 
-// // -------------------find()-------------------
+// -------------------find()-------------------
 // // the find() method returns the first value in an array that passes a given test.
 // let seaCreatures = ["whale", "octopus", "shark", "cuttlefish", "flounder"];
 
@@ -233,7 +233,7 @@
 
 // console.log(found);
 
-// // -----------------------------------findIndex---------------------------
+// -----------------------------------findIndex---------------------------
 // // the findIndex() method returns the first index in an array that passes a given test.
 // let seaCreatures = ["whale", "octopus", "shark", "cuttlefish", "flounder"];
 // // check if a given value is a cephalopod

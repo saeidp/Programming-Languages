@@ -13,7 +13,7 @@
 // }
 // printThis(); // undefined
 
-// //-------------------- object method---------------------
+//-------------------- object method---------------------
 // // A method uses this to refer to the properties of the object.
 // const america = {
 //   name: 'The United States of America',

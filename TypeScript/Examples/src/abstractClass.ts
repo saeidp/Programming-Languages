@@ -1,3 +1,4 @@
+// -------------------------------------------------- Abstract class -----------------------------------
 // abstract class TakePhoto {
 //     constructor(
 //         public cameraMode: string,

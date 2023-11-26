@@ -1,4 +1,5 @@
-// // This is a normal array that says you can only push number or string
+// ------------------------------------------- tuples ----------------------------------
+//// This is a normal array that says you can only push number or string
 // const user: (string | number)[] = [1, "hc"]
 // user.push("hello")
 

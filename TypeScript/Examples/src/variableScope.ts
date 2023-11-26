@@ -1,4 +1,4 @@
-// //----------------- local variable is different than global
+//----------------- local variable is different than global
 // // Initialize a global variable
 // var species = "human";
 
