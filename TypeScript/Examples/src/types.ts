@@ -1,4 +1,4 @@
-// // ------------------------- basic types ---------------------
+// ------------------------- basic types ---------------------
 // type User = {
 //     readonly _id: string
 //     name: string
@@ -50,6 +50,7 @@
 // };
 
 // console.log(user.name);
+
 //--------------------------------------------------------------
 // interface User {
 //     name: string;

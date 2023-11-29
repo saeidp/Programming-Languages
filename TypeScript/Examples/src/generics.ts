@@ -81,3 +81,57 @@
 //         this.cart.push(product)
 //     }
 // }
+
+// ------------------------------------ Generic function -------------------------
+// function getFirstElement<T>(arr: T[]): T | undefined {
+//     return arr[0]
+// }
+
+// let numbers = [1, 2, 3];
+// let firstNumber = getFirstElement(numbers); // inferred as number
+// let strings = ["apple", "banana", "cherry"];
+// let firstString = getFirstElement(strings); // inferred as string
+
+// ----------------------------------------- Generic Interface -------------------
+// interface Pair<k, V> {
+//     key: k;
+//     value: V;
+// }
+
+// let numberStringPair: Pair<number, string> = { key: 1, value: "one" };
+// let stringNnumberPair: Pair<string, Date> = { key: "today", value: new Date() };
+
+// -------------------------------------------- Generic Class --------------------------
+// class Box<T> {
+//     contents: T;
+//     constructor(value: T) {
+//         this.contents = value;
+//     }
+// }
+
+// let numberBox = new Box(10); // Box<number>
+// let stringBox = new Box("Hello World"); // Box<string>
+
+// -------------------------------------------------- Constraints in Generics ---------------------
+// // Resticting the type that can be used
+// function mergerObject<T extends object, U extends object>(obj1: T, obj2: U): T & U {
+//     return { ...obj1, ...obj2 };
+// }
+
+// let result = mergerObject({ name: "Alice" }, { age: 25 }); // {name: string, age: number}
+
+// console.log(result); // {name: 'Alice', age: 25}
+
+// --------------------------------------------------- Generic Utility Types --------------------
+// // Using built-in generic utility types like Partial or Readonly.
+// interface UserProfile {
+//     name: string;
+//     age: number;
+// }
+
+// // All properties of UserProfile will become optional
+// let partialProfile: Partial<UserProfile> = { name: "Alice" };
+
+// // All properties of UserProfile will become readonly
+// let readonlyProfile: Readonly<UserProfile> = { name: "Bob", age: 30 };
+// // readonlyProfile.name = "Charlie"; // Error: Cannot assign to 'name' because it is a read-only property
