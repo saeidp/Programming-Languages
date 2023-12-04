@@ -1,3 +1,77 @@
+// -------------------------------------------- union -------------------------------
+// type StringOrNumber = string | number;
+
+// let myVar: StringOrNumber;
+// myVar = "Hello";  // Valid
+// myVar = 123;      // Also valid
+
+// -------------------------------------- Defining type for objects -----------------------
+
+// // The type keyword in TypeScript allows you to define custom types, enhancing code readability and maintainability.
+// type User = {
+//     id: number;
+//     name: string;
+//     age?: number;  // Optional property
+// };
+
+// const user: User = { id: 1, name: "Alice", age: 30 };
+
+// ---------------------------------------- Intersection Types --------------------------------
+// type Name = {
+//     firstName: string;
+//     lastName: string;
+// };
+// type Contact = {
+//     email: string;
+//     phone: string;
+// };
+
+// type Employee = Name & Contact;
+
+// const employee: Employee = {
+//     firstName: "John",
+//     lastName: "Doe",
+//     email: "john.doe@example.com",
+//     phone: "123-456-7890"
+// };
+
+// -------------------------------------------------- Type for Function ------------------------------------
+// // Here, GreetFunction is a type that represents a function taking a string argument and returning a string.
+// type GreetFunction = (name: string) => string;
+// const sayHello: GreetFunction = name => `Hello, ${name}`;
+// console.log(sayHello("Alice"));  // Output: Hello, Alice
+
+// ---------------------------------------------------- Readonly type modifier ------------------------------
+// type ReadonlyUser = {
+//     readonly id: number;
+//     readonly name: string;
+// };
+
+// const readOnlyUser: ReadonlyUser = { id: 1, name: "Alice" };
+// // readOnlyUser.id = 2; // Error: Cannot assign to 'id' because it is a read-only property
+
+// ----------------------------------------------------- Type of arrays ------------------------------------------
+// type NumberArray = number[];
+// const numbers: NumberArray = [1,2,3,4,5]
+
+// -------------------------------------------------------- Mapped Types ----------------------------------------
+// // each key is a string literal type and each value is a boolean.
+// type MyPermissions = {
+//     [P in 'read' | 'write' | 'execute']: boolean;
+// };
+
+// const userPermissions: MyPermissions = {
+//     read: true,
+//     write: false,
+//     execute: true
+// };
+
+// ---------------------------------------------------------- Conditional Types ---------------------------------
+// // Check is a conditional type that evaluates to different types based on the type of T
+// type Check<T> = T extends string ? 'StringType' : 'OtherType';
+// type Type1 = Check<string>;  // 'StringType'
+// type Type2 = Check<number>;  // 'OtherType'
+
 // ------------------------- basic types ---------------------
 // type User = {
 //     readonly _id: string
