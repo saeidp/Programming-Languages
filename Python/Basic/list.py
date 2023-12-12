@@ -102,9 +102,7 @@ print(squares[2:8:3])
 # Negative values can be used in list slicing (and normal list indexing). When negative values are used for the first and second values in a slice (or a normal index), they count from the end of the list.
 
 squares = [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
-print(squares[1:-1])
-
-[1, 4, 9, 16, 25, 36, 49, 64]
+print(squares[1:-1])  # [1, 4, 9, 16, 25, 36, 49, 64]
 
 # If a negative value is used for the step, the slice is done backwards.
 # Using [::-1] as a slice is a common and idiomatic way to reverse a list.
