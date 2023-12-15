@@ -1,0 +1,11 @@
+{
+    "dependencies": {
+      "fp-ts": "^2.16.1",
+      "fs": "^0.0.1-security",
+      "io-ts": "^2.2.20"
+    },
+    "devDependencies": {
+      "@types/node": "^20.6.3"
+    }
+  }
+  
