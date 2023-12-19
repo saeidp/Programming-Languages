@@ -59,3 +59,77 @@ export { }
 
 // const boris = cats.boris;
 // console.log(boris)
+
+// --------------------------------------- Pick<Type, Keys> ---------------------------------------
+// // Constructs a type by picking the set of properties Keys (string literal or union of string literals) from Type.
+// interface Todo {
+//     title: string;
+//     description: string;
+//     completed: boolean;
+// }
+
+// type TodoPreview = Pick<Todo, "title" | "completed">;
+
+// const todo: TodoPreview = {
+//     title: "Clean room",
+//     completed: false,
+// };
+
+// console.log(todo); // {title: 'Clean room', completed: false}
+
+// ----------------------------------------------- Omit<Type, Keys> ----------------------------------
+// // Constructs a type by picking all properties from Type and then removing Keys (string literal or
+// // union of string literals). The opposite of Pick.
+// interface Todo {
+//     title: string;
+//     description: string;
+//     completed: boolean;
+//     createdAt: number;
+// }
+
+// type TodoPreview = Omit<Todo, "description">;
+
+// const todo: TodoPreview = {
+//     title: "Clean room",
+//     completed: false,
+//     createdAt: 1615544252770,
+// };
+
+// console.log(todo); // {title: 'Clean room', completed: false, createdAt: 1615544252770}
+
+// type TodoInfo = Omit<Todo, "completed" | "createdAt">;
+
+// const todoInfo: TodoInfo = {
+//     title: "Pick up kids",
+//     description: "Kindergarten closes at 5pm",
+// };
+
+// console.log(todoInfo); // {title: 'Pick up kids', description: 'Kindergarten closes at 5pm'}
+
+// ----------------------------------------------- Exclude<UnionType, ExcludeMembers> -----------------------------
+// Constructs a type by excluding from UnionType all union members that are assignable to ExcludedMembers
+type T0 = Exclude<"a" | "b" | "c", "a">; // type T0 = "b" | "c"
+type T1 = Exclude<"a" | "b" | "c", "a" | "b">; //type T1 = "c"
+type T2 = Exclude<string | number | (() => void), Function>; //type T2 = string | number
+
+type Shape =
+    { kind: "circle"; radius: number }
+    | { kind: "square"; x: number }
+    | { kind: "triangle"; x: number; y: number };
+
+type T3 = Exclude<Shape, { kind: "Circle" }> // kind Circle will be removed from the Shape
+// type T3 = {
+//     kind: "square";
+//     x: number;
+// } | {
+//     kind: "triangle";
+//     x: number;
+//     y: number;
+// }
+
+const t: T3 = {
+    kind: "square",
+    x: 100
+}
+
+console.log(t) // {kind: 'square', x: 100}
