@@ -1,7 +1,20 @@
+// ----------------------------- Basic Set ----------------------------------------------
+// // Set example. The difference between set and array is the set doesn't accept duplicate. If used will be deleted
+// let fruitsSet: Set<string> = new Set(["apple", "banana", "apple", "orange"]);
+// console.log(fruitsSet.values()); // Duplicates removed automatically
+
 // ------------------------------------ Basic array --------------------------------------------
+// const MLModels: number[][] = [
+//     [255, 255, 255],
+//     []
+// ]
+
 // const superHeros: string[] = []
+// superHeros.push("spiderman")
+
 // // const heroPower: number[] = []
 // const heroPower: Array<number> = []
+// heroPower.push(2)
 
 // type User = {
 //     name: string
@@ -9,15 +22,6 @@
 // }
 
 // const allUsers: User[] = []
-
-// const MLModels: number[][] = [
-//     [255, 255, 255],
-//     []
-// ]
-
-
-// superHeros.push("spiderman")
-// heroPower.push(2)
 
 // allUsers.push({ name: "first", isActive: true })
 // allUsers.push({ name: "second", isActive: false })
@@ -194,8 +198,17 @@
 
 // // print out each item in the array
 // let printFish = fish.map(individualFish => {
-//   console.log(individualFish);
+//     console.log(individualFish);
 // });
+
+// // print out each item in the array
+// let helloFish = fish.map(individualFish => {
+//     return "hello " + individualFish
+// });
+
+// helloFish.forEach(item => {
+//     console.log(item);
+// })
 
 // --------------------------filter()-----------------------
 // // the filter() method creates a new array with the elements that pass the result of a given test
