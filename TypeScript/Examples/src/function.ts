@@ -18,13 +18,13 @@
 // signUpUser("hitesh", "hitesh@lco.dev", false)
 // loginUser("h", "h@h.com")
 
-// // Type 'string' is not assignable to type 'boolean'
-// // function getValue(myVal: number): boolean{
-// //     if (myVal > 5) {
-// //         return true
-// //     }
-// //     return "200 OK"
-// // }
+// -------------- Type 'string' is not assignable to type 'boolean' ----------------
+// function getValue(myVal: number): boolean{
+//     if (myVal > 5) {
+//         return true
+//     }
+//     return "200 OK"
+// }
 
 // const getHello = (s: string): string => {
 //   return ""
@@ -39,9 +39,6 @@
 
 // console.log(values) // ['hero is thor', 'hero is spiderman', 'hero is ironman']
 
-
-
-
 // function consoleError(errmsg: string): void {
 //   console.log(errmsg);
 
@@ -55,7 +52,8 @@
 // export { }
 
 
-// ------------------------------- function type expressions
+// ------------------------------- function type expressions ----------------
+//// You creat a function and pass it to anothe one
 // function greeter1(fn: (a: string) => void) {
 //   fn("Hello, World");
 // }
@@ -65,7 +63,6 @@
 // }
 
 // greeter1(printToConsole1);
-
 
 //// another way
 // type GreetFunction = (a: string) => void;
@@ -79,15 +76,13 @@
 //greeter2((s) => { console.log(s) })
 
 
-
-
 // --------------------------function expression--------------------
 // // assign add function to sum constant
-// const sum = function add(x: number, y: number): number {
-//   return x + y;
+// const sum = function (x: number, y: number): number {
+//     return x + y;
 // };
 // // invoke function to find the sum
-// sum(20, 5);
+// console.log(sum(20, 5));
 
 // // ----------------------------Arrow function------------------------
 // // arrow functions are always anonymous functions and a type of function expression
@@ -98,23 +93,6 @@
 
 // // invoke function to find product
 // multiply(30, 4);
-
-//--------------------------------------------------- Call Signatures --------------------------
-// type DescribableFunction = {
-//   description: string;
-//   (someArg: number): boolean;
-// };
-// function doSomething(fn: DescribableFunction) {
-//   console.log(fn.description + " returned " + fn(6));
-// }
-
-// function myFunc(someArg: number) {
-//   return someArg > 3;
-// }
-// myFunc.description = "default description";
-
-// doSomething(myFunc);
-
 
 // --------------------------------------Generic Functions --------------------------------------
 

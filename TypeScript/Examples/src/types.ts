@@ -398,3 +398,43 @@
 
 // respond("Princess Caroline", UserResponse.Yes);
 
+// ----------------------------- function as types -------------------------
+// type func = (s: string) => void
+// function printToConsole3(s: string): void {
+//     console.log(s)
+// }
+
+// const myFunc: func = printToConsole3
+// myFunc("Hello")
+
+//--------------------------------------------------- Call Signatures --------------------------
+//// I find it a bit magical and I prefer the next sample which is more clear
+// type DescribableFunction = {
+//     description: string;
+//     (someArg: number): boolean;
+// };
+// function doSomething(fn: DescribableFunction) {
+//     console.log(fn.description + " returned " + fn(6));
+// }
+
+// function myFunc(someArg: number) {
+//     return someArg > 3;
+// }
+// myFunc.description = "default description";
+
+// doSomething(myFunc);
+
+// ----------------------------------------- Call signature using type ----------------------------
+
+// type DescribableFunction = {
+//     description: string,
+//     myFunc: (someArg: number) => boolean
+// };
+
+// const myTypeValue: DescribableFunction = {
+//     description: "Hello",
+//     myFunc: (someArg: number) => someArg > 3
+// };
+
+// myTypeValue.description = "default description";
+// console.log(myTypeValue.myFunc(5));
