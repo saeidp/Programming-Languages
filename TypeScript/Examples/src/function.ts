@@ -1,3 +1,4 @@
+export { }
 // ------------------------------ basic funtions -------------------------------------
 // function addTwo(num: number): number {
 //   return num + 2
@@ -210,6 +211,49 @@
 // function len2(x: any[] | string) {
 //   return x.length;
 // }
+
+
+// // --------------------------------------------------- Function overloads ---------------------------
+// interface Coordinate {
+//     x: number;
+//     y: number;
+//     z: number;
+// }
+
+// function parseCoordinate(str: string): Coordinate;
+// function parseCoordinate(obj: Coordinate): Coordinate;
+// function parseCoordinate(x: number, y: number, z: number): Coordinate;
+// function parseCoordinate(arg1: unknown, arg2?: unknown, arg3?: unknown): Coordinate {
+//     let coord: Coordinate = {
+//         x: 0,
+//         y: 0,
+//         z: 0
+//     };
+
+//     if (typeof arg1 === "string") {
+//         (arg1 as string).split(",").forEach((str) => {
+//             const [key, value] = str.split(":");
+//             coord[key as "x" | "y", "z"] = parseInt(value, 10);
+//         });
+//     } else if (typeof arg1 === "object") {
+//         coord = {
+//             ...(arg1 as Coordinate),
+//         };
+//     } else {
+//         coord = {
+//             x: arg1 as number,
+//             y: arg2 as number,
+//             z: arg3 as number
+//         };
+//     }
+
+//     return coord;
+// }
+
+// console.log(parseCoordinate(10, 20, 30));
+// console.log(parseCoordinate({ x: 52, y: 35, z: 15 }));
+// console.log(parseCoordinate("x:12,y:22, z:32"));
+
 
 // --------------------------------- unknown -------------------------
 //// The unknown type represents any value. This is similar to the any type, but is safer because it’s not legal to do anything with an unknown value:
