@@ -438,3 +438,27 @@
 
 // myTypeValue.description = "default description";
 // console.log(myTypeValue.myFunc(5));
+
+// ------------------------------------------ type predicates -------------
+// // A predicate takes the form parameterName is Type, where parameterName must
+// // be the name of a parameter from the current function signature.
+// // Any time isFish is called with some variable, TypeScript will narrow
+// // that variable to that specific type if the original type is compatible.
+// type Fish = { swim: () => void };
+// type Bird = { fly: () => void };
+// function isFish(pet: Fish | Bird): pet is Fish {
+//     return (pet as Fish).swim !== undefined;
+// }
+
+// function getPet(): Fish | Bird {
+//     return { swim: () => { console.log("I am a fish") } };
+//     // return { fly: () => { console.log("I am a bird") } };
+// }
+
+// let pet = getPet();
+
+// if (isFish(pet)) {
+//     pet.swim();
+// } else {
+//     pet.fly();
+// }
