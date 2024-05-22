@@ -135,3 +135,51 @@
 // // All properties of UserProfile will become readonly
 // let readonlyProfile: Readonly<UserProfile> = { name: "Bob", age: 30 };
 // // readonlyProfile.name = "Charlie"; // Error: Cannot assign to 'name' because it is a read-only property
+
+// -------------------------------------------------------- Generic Class  complete example---------------------------------
+// interface IMemoryData<K, V> {
+//     get(id: K): V;
+//     set(id: K, value: V): void;
+// }
+
+// interface IPersistentData {
+//     save(): string;
+//     load(state: string): void;
+// }
+// type Key = string | number | symbol
+
+// class MemoryData<K extends Key, V> implements IMemoryData<K, V> {
+//     protected data: Record<K, V> = {} as Record<K, V>;
+//     get(id: K): V {
+//         return this.data[id];
+//     }
+//     set(id: K, value: V): void {
+//         this.data[id] = value;
+//     }
+// }
+
+// class PersistentData<K extends Key, V> extends MemoryData<K, V> implements IPersistentData {
+//     save(): string {
+//         return JSON.stringify(this.data)
+//     }
+//     load(state: string): void {
+//         this.data = JSON.parse(state)
+//         // load data
+//     }
+// }
+
+// const persistentData = new PersistentData<string, number>();
+
+// persistentData.set("name", 10);
+// console.log(persistentData.get("name"));
+
+// const savedString = persistentData.save();
+
+// persistentData.set("name", 20);
+// console.log(persistentData.get("name"));
+
+
+// const persistentData2 = new PersistentData<string, number>();
+// persistentData2.load(savedString);
+// console.log(persistentData2.get("name"));
+

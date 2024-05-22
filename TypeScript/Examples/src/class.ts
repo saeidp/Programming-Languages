@@ -98,20 +98,22 @@ const persistentData = new PersistentData();
 persistentData.set("name", "John");
 console.log(persistentData.get("name"));
 
-const saved = persistentData.save();
+const savedString = persistentData.save();
 
 persistentData.set("name", "Smith");
 console.log(persistentData.get("name"));
 
 
 const persistentData2 = new PersistentData();
-persistentData2.load(saved);
+persistentData2.load(savedString);
 console.log(persistentData2.get("name"));
 // or if the data is not protected
 // console.log(persistentData2.data["name"]);
 
+// Extra property to add
 persistentData.set("age", "10");
 console.log(persistentData.get("age"));
-
+// output:
+// {name: 'Smith', age: '10'}
 
 
