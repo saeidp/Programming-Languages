@@ -1,3 +1,4 @@
+// Scrimba tutorial sample code
 import { memo, useState, useTransition } from 'react'
 import ReactDOM from 'react-dom/client'
 import { sleep } from "./utils"
