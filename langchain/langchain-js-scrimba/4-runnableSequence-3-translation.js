@@ -1,4 +1,4 @@
-import { RunnableSequence } from "@langchain/core/runnables";
+import { RunnableSequence, RunnablePassthrough } from "@langchain/core/runnables";
 import { ChatBedrockConverse } from "@langchain/aws";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
 import { StringOutputParser } from "@langchain/core/output_parsers"
@@ -17,6 +17,14 @@ const grammarTemplate = `Given a sentence correct the grammar.
     `
 const grammarPrompt = ChatPromptTemplate.fromTemplate(grammarTemplate)
 
+// we need to pass language as we need it in chain we need runnable pass through
+const translationTemplate = `Given a sentence, translate that sentence into {language}
+    sentence: {grammatically_correct_sentence}
+    translated sentence:
+    `
+const translationPrompt = ChatPromptTemplate.fromTemplate(translationTemplate)
+
+
 
 const llm = new ChatBedrockConverse({
     model: "anthropic.claude-3-haiku-20240307-v1:0",
@@ -25,33 +33,36 @@ const llm = new ChatBedrockConverse({
     temperature: 0.7,
 });
 
-// One chain for all the steps
-// const chain = RunnableSequence.from([
-//     punctuationPrompt,
-//     llm,
-//     new StringOutputParser(),
-//     {punctuated_sentence: prevResult => prevResult},
-//     grammarPrompt,
-//     llm,
-//     new StringOutputParser(),
-// ])
+const punctuationChain = RunnableSequence.from([
+    punctuationPrompt,
+     llm,
+     new StringOutputParser()])
 
-// The above can be written cleaner as folows:
-//const punctuationChain = punctuationPrompt.pipe(llm).pipe(new StringOutputParser())
-const punctuationChain = RunnableSequence.from([punctuationPrompt, llm, new StringOutputParser()])
-const grammerChain = RunnableSequence.from([grammarPrompt,llm, new StringOutputParser()])
+const grammerChain = RunnableSequence.from([
+    grammarPrompt,
+    llm, 
+    new StringOutputParser()])
 
-// const chain =RunnableSequence.from([
-//     {punctuated_sentence: punctuationChain},
-//     grammerChain
-// ])
+const translationChain = RunnableSequence.from([
+    translationPrompt, 
+    llm, 
+    new StringOutputParser()])
 
-// or
 const chain =RunnableSequence.from([
-    punctuationChain,
-    {punctuated_sentence: prevResult => prevResult},
-    grammerChain
+    {
+        punctuated_sentence: punctuationChain,
+        original_input: new RunnablePassthrough()
+
+    },
+    {
+        grammatically_correct_sentence: grammerChain,
+        language: (prevResult) => prevResult.original_input.language
+        //or
+        // language: ({ original_input }) => original_input.language
+    },
+    translationChain
 ])
+
 
 // I don't liked Mondays. It shows that grammar is not yet fixed
 const response = await chain.invoke({
