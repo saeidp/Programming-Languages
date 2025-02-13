@@ -79,7 +79,8 @@ const answereChain = RunnableSequence.from([
 convHistory.push(question1)
 convHistory.push(response1)
 
-console.log(response1)
+console.log("First Response: ", response1)
+console.log("\n")
 
 
 const question2= `What is my name?`
@@ -90,5 +91,5 @@ const response2 = await chain.invoke({
 convHistory.push(question2)
 convHistory.push(response2)
 
-console.log(response2)
+console.log("Second Response: ", response2)
 
