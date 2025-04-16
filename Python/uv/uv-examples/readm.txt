@@ -1,0 +1,5 @@
+uv venv .venv
+source .venv/bin/activate
+uv pip install requests
+uv pip compile requirements.in > requirements.lock
+uv pip sync requirements.lock
